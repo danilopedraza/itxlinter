@@ -1,7 +1,6 @@
 import argparse
 
 from my_io import (
-    get_binary,
     write_to_file,
 )
 
@@ -30,8 +29,7 @@ if __name__ == '__main__':
     )
     args = parser.parse_args()
 
-    binary = get_binary(args.filename)
-    itx_map = parse_binary(binary)
+    itx_map = parse_binary(args.filename)
     result = lint(itx_map)
 
     if args.fix:
