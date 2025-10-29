@@ -21,7 +21,7 @@ if __name__ == '__main__':
     )
     parser.add_argument(
         'filename',
-        help='The path of a ITX map file (the `.mms`).'
+        help='The path of an ITX map file (the `.mms`).'
     )
     parser.add_argument(
         '-f', '--fix',
