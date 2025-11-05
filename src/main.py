@@ -4,7 +4,7 @@ from my_io import (
     write_to_file,
 )
 
-from parse_binary import (
+from itx_map import (
     parse_binary,
 )
 
