@@ -11,11 +11,16 @@ class ITXMap:
         self.plain = plain
         self.parsed = None
     
-    def parse(self):
+    def tree(self):
         if self.parsed is None:
             self.parsed = ET.fromstring(self.plain)
         
         return self.parsed
+    
+    def to_mms(self):
+        temp_file_name = join(gettempdir(), str(uuid4()))
+        self.tree().write(temp_file_name)
+        return mimport(temp_file_name)
 
 def get_itx_path():
     return "C:\IBM\TransformationExtender_10.1.1"
@@ -62,12 +67,7 @@ def mimport(filename):
     remove(temp_file_name)
     return content
 
-def to_mms(itx_map):
-    temp_file_name = join(gettempdir(), str(uuid4()))
-    write_to_file(itx_map.plain.encode('utf-8'), temp_file_name)
-    return mimport(temp_file_name)
-
 def parse_binary(filename):
     itx_map = ITXMap(mexport(filename))
-    itx_map.parse()
+    itx_map.tree()
     return itx_map

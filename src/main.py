@@ -6,7 +6,6 @@ from my_io import (
 
 from itx_map import (
     parse_binary,
-    to_mms,
 )
 
 from lint import (
@@ -36,4 +35,4 @@ if __name__ == '__main__':
     if args.fix:
         new_map = fix(itx_map, lint_result)
         if not all(correct for correct, _ in lint_result):
-            write_to_file(to_mms(new_map), args.filename)
+            write_to_file(new_map.to_mms(), args.filename)
