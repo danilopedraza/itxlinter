@@ -5,12 +5,14 @@
 # After that, add your function to the `checks` list in the
 # `lint` function!
 
-def check_for_nothing(itx_map):
-    return True, lambda _: None
+def map_trace_off(itx_map):
+    correct = itx_map.tree().find('./Map/MapSettings/MapTrace').get('Switch') == 'OFF'
+    fixer = lambda map: map.tree().find('./Map/MapSettings/MapTrace').set('Switch', 'OFF')
+    return correct, fixer
 
 def lint(itx_map):
     checks = [
-        check_for_nothing,
+        map_trace_off,
     ]
 
     return map(lambda check: check(itx_map), checks)
