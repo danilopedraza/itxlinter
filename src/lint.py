@@ -20,3 +20,5 @@ def fix(itx_map, results):
         successful, fixer = result
         if not successful:
             fixer(itx_map)
+    
+    return itx_map

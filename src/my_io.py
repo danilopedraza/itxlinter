@@ -1,2 +1,3 @@
-def write_to_file(itx_map, filename):
-    return NotImplemented
+def write_to_file(content, filename):
+    with open(filename, 'wb') as f:
+        f.write(content)
