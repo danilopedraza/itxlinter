@@ -34,7 +34,8 @@ def mexport(filename):
             mexport_path=get_mexport_path(),
             filename=filename,
             temp_file_name=temp_file_name,
-        )
+        ),
+        capture_output=True,
     )
 
     with open(temp_file_name, 'r') as f:
@@ -51,7 +52,8 @@ def mimport(filename):
             mimport_path=get_mimport_path(),
             filename=filename,
             temp_file_name=temp_file_name,
-        )
+        ),
+        capture_output=True,
     )
 
     with open(temp_file_name, 'rb') as f:
