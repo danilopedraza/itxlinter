@@ -17,16 +17,16 @@ from lint import (
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         prog='mapgenie',
-        description='An assistant for IBM Sterling Transformation Extender maps.',
+        description='An assistant for IBM Sterling Transformation Extender maps',
     )
     parser.add_argument(
         'filename',
-        help='The path of an ITX map file (the `.mms`).'
+        help='The path of an ITX map source file (the `.mms`)'
     )
     parser.add_argument(
         '-f', '--fix',
         action='store_true',
-        help='Apply automatic fixes for anything the linter can fix.'
+        help='Apply automatic fixes for anything the linter can fix'
     )
     args = parser.parse_args()
 
