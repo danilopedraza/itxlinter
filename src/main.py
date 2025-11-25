@@ -31,9 +31,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     itx_map = parse_binary(args.filename)
-    result = lint(itx_map)
+    lint_result = lint(itx_map)
 
     if args.fix:
-        new_map = fix(itx_map, result)
-        if not all(correct for correct, _ in result):
+        new_map = fix(itx_map, lint_result)
+        if not all(correct for correct, _ in lint_result):
             write_to_file(to_mms(new_map), args.filename)
