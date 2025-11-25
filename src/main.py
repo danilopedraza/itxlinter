@@ -15,8 +15,8 @@ from lint import (
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        prog='itxlinter',
-        description='A linter for IBM Sterling Transformation Extender maps.',
+        prog='mapgenie',
+        description='An assistant for IBM Sterling Transformation Extender maps.',
     )
     parser.add_argument(
         'filename',
